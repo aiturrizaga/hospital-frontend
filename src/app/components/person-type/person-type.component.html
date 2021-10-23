@@ -1,0 +1,20 @@
+<h4>Tipos de Persona</h4>
+<hr>
+<ul>
+    <li *ngFor="let data of tipos">{{ data.name }} - {{data.personTypeId}}</li>
+</ul>
+
+<table border="1">
+    <thead>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>ESTADO</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of tipos">
+            <th>{{ data.personTypeId }}</th>
+            <th>{{ data.name }}</th>
+            <th>{{ data.status }}</th>
+        </tr>
+    </tbody>
+</table>
