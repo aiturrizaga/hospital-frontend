@@ -1,20 +1,32 @@
-<h4>Tipos de Persona</h4>
-<hr>
-<ul>
-    <li *ngFor="let data of tipos">{{ data.name }} - {{data.personTypeId}}</li>
-</ul>
+<div style="padding: 4rem;">
+    <h4>Tipos de Persona</h4>
 
-<table border="1">
-    <thead>
-        <th>ID</th>
-        <th>NOMBRE</th>
-        <th>ESTADO</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let data of tipos">
-            <th>{{ data.personTypeId }}</th>
-            <th>{{ data.name }}</th>
-            <th>{{ data.status }}</th>
-        </tr>
-    </tbody>
-</table>
+    <table border="1">
+        <thead>
+            <th>N°</th>
+            <th>NOMBRE</th>
+            <th>ESTADO</th>
+            <th>ELIMINAR</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of tipos; let i = index">
+                <th>{{ i + 1 }}</th>
+                <th>{{ data.name }}</th>
+                <th>{{ data.status }}</th>
+                <th>
+                    <button type="button" (click)="delete(data.personTypeId)">Eliminar</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="padding: 4rem;">
+    <form>
+        <label for="">Nombres</label>
+        <br>
+        <input type="text" placeholder="Ingresar nombres" [(ngModel)]="nombre" name="nombre">
+        <br>
+        <button type="button" (click)="register()">Registrar</button>
+    </form>
+</div>
